@@ -1,0 +1,67 @@
+body{
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
+}
+.container{
+    background-color: turquoise;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+.form{
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 10px;
+    column-gap: 35px;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+.character-counter{
+    display: flex;
+    align-items: center;
+}
+.input-num{
+    width: 35px;
+}
+.password{
+    background-color: white;
+    color: black;
+    padding: 18px;
+    text-transform: capitalize;
+    border: 1px solid;
+    width: 300px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    word-break: break-all;
+    border-radius: 0.5rem;
+}
+input[type=checkbox]{
+    width: 35px;
+}
+.btn{
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    grid-column: span 2;
+    padding: 8px;
+    text-transform: capitalize;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+.btn:hover{
+    background-color: #ffffff33;
+}
