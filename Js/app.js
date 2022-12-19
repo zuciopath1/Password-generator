@@ -1,8 +1,3 @@
-const characterAmountRange = document.querySelector('#charactersAmountRange');
-const characterAmountNumber = document.querySelector('#charactersAmountNumber');
-const form = document.querySelector('#passwordForm')
-const displayPassword = document.querySelector('#displayPassword')
-
 const includeUppercaseElement = document.querySelector('#includeUppercase')
 const includeNumberseElement =document.querySelector('#includeNumbers')
 const includeSymbolsElement =document.querySelector('#includeSymbols')
@@ -16,8 +11,19 @@ const symbol_char_codes = arrayFromLowToHigh(33,47).concat(
         )
     )
 )
+// 
+function arrayFromLowToHigh(low,high){
+    const array = []
+    for (let i = low; i <= high; i++){
+        array.push(i)
+    }
+    return array
+}
+// 
 
 // 
+const characterAmountRange = document.querySelector('#charactersAmountRange');
+const characterAmountNumber = document.querySelector('#charactersAmountNumber');
 characterAmountRange.addEventListener('input',syncCharacterAmount)
 characterAmountNumber.addEventListener('input',syncCharacterAmount)
 
@@ -27,7 +33,8 @@ function syncCharacterAmount (e){
     characterAmountNumber.value = value
 }
 // 
-
+const displayPassword = document.querySelector('#displayPassword')
+const form = document.querySelector('#passwordForm')
 form.addEventListener('submit', e => {
     e.preventDefault()
     const characterAmount = characterAmountNumber.value
@@ -41,7 +48,7 @@ form.addEventListener('submit', e => {
 // 
 function generatePassword (characterAmount,includeUppercase,includeNumbers,
     includeSymbols){
-       let charCodes = lowercase_char_codes
+       let charCodes = lowercase_char_codes;
        if(includeUppercase)charCodes = charCodes.concat(uppercase_char_codes)
        if(includeSymbols)charCodes = charCodes.concat(symbol_char_codes)
        if(includeNumbers)charCodes = charCodes.concat(number_char_codes)
@@ -54,11 +61,3 @@ function generatePassword (characterAmount,includeUppercase,includeNumbers,
       }
       return passwordCharacter.join('')
        }
-function arrayFromLowToHigh(low,high){
-    const array = []
-    for (let i = low; i <= high; i++){
-        array.push(i)
-    }
-    return array
-}
-// 
